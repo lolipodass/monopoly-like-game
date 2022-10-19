@@ -1,0 +1,21 @@
+{
+  "name": "checkers",
+  "scripts": {
+    "start": "node server.js",
+    "dev-start": "nodemon server.js --watch ../client/build"
+  },
+  "description": "little pet project",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.2",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "typescript": "~4.8.3"
+  }
+}
