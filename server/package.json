@@ -2,7 +2,7 @@
   "name": "checkers",
   "scripts": {
     "start": "node server.js",
-    "dev-start": "nodemon server.js --watch ../client/build"
+    "watch": "nodemon server.js --watch ../server --watch ../client/build"
   },
   "description": "little pet project",
   "version": "1.0.0",

@@ -29,13 +29,13 @@ const jsLoaders = (elem, elem2) => {
 
 module.exports = {
     mode: "development",
-    entry: "./src/index.js",
+    entry: "./src/index.tsx",
     output: {
         path: path.join(__dirname, "build"),
         filename: "bundle.js",
     },
     resolve: {
-        extensions: [".js", ".json", ".ts", "jsx", "tsx"],
+        extensions: [".js", ".json", ".ts", ".jsx", ".tsx"],
     },
 
     module:
@@ -45,7 +45,7 @@ module.exports = {
             exclude: /node_modules/,
             use: jsLoaders(),
         },
-        { test: /\.css$/i, use: 'css-loader' },
+        { test: /\.css$/i, use: ["style-loader", "css-loader"] },
         {
             test: /\.ts$/i,
             exclude: /node_modules/,

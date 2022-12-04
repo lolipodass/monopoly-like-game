@@ -8,7 +8,6 @@ const path = require("path");
 
 const buildPath = path.join(__dirname, '..', 'client/build');
 
-
 app.use(express.static(buildPath))
 
 app.get('/', (req, res) => {
@@ -17,7 +16,30 @@ app.get('/', (req, res) => {
 
 
 
+
+let GameStarted = false
+
+const throwDice = () => {
+  return Math.floor(Math.random() * 12 + 1);
+}
+
+const users = []
+
+
 io.on('connection', (socket) => {
+  socket.on('login', (msg) => {
+    if (!GameStarted)
+      users.push({ position: 0, money: 1500, companies: {} })
+  })
+  socket.on('start', () => {
+    GameStarted = true;
+    socket.emit('gameStarted', { amountPlayers: users.length });
+  })
+
+
+
+
+
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
   });
