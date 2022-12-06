@@ -1,6 +1,7 @@
-import { useAppDispatch } from "../../store/hooks";
-import { activate } from "../../store/InformationSlice";
-import { cardCompanyInfo } from "../../types/CardInfo";
+import { useAppDispatch } from "@/store/hooks"
+import { activate } from "@/store/InformationSlice"
+import { cardCompanyInfo } from "@/types/CardInfo"
+
 
 
 export default ({ information }: { information: cardCompanyInfo }) => {

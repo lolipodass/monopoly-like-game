@@ -1,0 +1,30 @@
+.player{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+border: 3px solid rgba(0,0,0,.5);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 2s;
+}
+
+.players{
+    position: absolute;
+}
+
+.players-1{
+    background-color: red;
+}
+
+.players-2{
+    background-color: greenyellow;
+}
+
+.players-3{
+    background-color: indianred
+}
+
+.players-4{
+    background-color: brown;
+
+}

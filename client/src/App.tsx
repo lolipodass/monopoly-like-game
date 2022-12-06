@@ -1,5 +1,5 @@
-import "./resources/css/app.css"
-import Board from "./components/Board"
+import "@css/app.css"
+import Board from "@components/Board"
 
 export default () => {
     return (

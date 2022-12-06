@@ -1,17 +1,22 @@
-import "./../resources/css/board.css"
-import Card from "./Cards/Company";
-import CenterCard from "./Cards/Center";
-import cardInfo, { rotation, cellType, cardCompanyInfo } from "../types/CardInfo";
-import Corner from "./Cards/Corner";
-import Question from "./Cards/Question";
-import Information from "./Cards/Information";
+import "@css/board.css"
+import Card from "@components/Cards/Company";
+import CenterCard from "@components/Cards/Center";
+import Corner from "@components/Cards/Corner";
+import Question from "@components/Cards/Question";
+import Information from "@components/Cards/Information";
+import Players from "@components/Players";
+import { cardCompanyInfo, cellType, rotation } from "@/types/CardInfo";
+import Cards from "@/resources/information/Cards";
+
+
+
 
 export default () => {
 
     return (
         <div className="board">
 
-            {cardInfo.map((i, index) => {
+            {Cards.map((i, index) => {
                 if (i.rotation === rotation.corner)
                     return (<Corner type={i.type} key={index}></Corner>)
                 else if (i.type === cellType.question)
@@ -24,5 +29,6 @@ export default () => {
             })}
             <CenterCard></CenterCard>
             <Information />
+            <Players></Players>
         </div>)
 }

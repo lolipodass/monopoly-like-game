@@ -12,6 +12,11 @@ export interface Company {
     price: number
 }
 
+export interface ChangePosition {
+    number: number,
+    player: number
+}
+
 const initialState: PlayerInformation[] = [
     {
         name: "me",
@@ -21,7 +26,7 @@ const initialState: PlayerInformation[] = [
     }
 ]
 
-export const PlayerSlice = createSlice({
+export const PlayersSlice = createSlice({
     name: 'players',
     initialState,
     reducers: {
@@ -31,11 +36,19 @@ export const PlayerSlice = createSlice({
         addPlayer: (state, action: PayloadAction<PlayerInformation>) => {
             state.push(action.payload);
         },
+        removePlayer: (state, action: PayloadAction<number>) => {
+            state.splice(action.payload, 1);
+        },
+        changePosition: (state, action: PayloadAction<ChangePosition>) => {
+            state[action.payload.player].position += action.payload.number;
+            if (state[0].position >= 40)
+                state[0].position = state[0].position - 40;
+        },
         resetPlayers: () => initialState
     }
 
 })
 
-export const { addCompany, addPlayer, resetPlayers } = PlayerSlice.actions
+export const { addCompany, addPlayer, resetPlayers, changePosition, removePlayer } = PlayersSlice.actions
 
-export default PlayerSlice.reducer 
+export default PlayersSlice.reducer 

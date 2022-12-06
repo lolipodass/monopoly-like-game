@@ -1,0 +1,14 @@
+.center-square{
+   display: flex;
+   flex-direction: column;
+   
+}
+
+.messages{
+    overflow-y: scroll;
+}
+
+
+.input-message{
+    margin-bottom: 20px;
+}

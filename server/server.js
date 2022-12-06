@@ -27,6 +27,8 @@ const users = []
 
 
 io.on('connection', (socket) => {
+  socket.on('event', () => console.log('event'));
+
   socket.on('login', (msg) => {
     if (!GameStarted)
       users.push({ position: 0, money: 1500, companies: {} })

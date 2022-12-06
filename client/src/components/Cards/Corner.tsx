@@ -1,4 +1,5 @@
-import { cellType } from "../../types/CardInfo"
+import { cellType } from "@/types/CardInfo"
+
 
 
 export default ({ type }: { type: cellType }) => {
