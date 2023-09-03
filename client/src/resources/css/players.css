@@ -3,28 +3,34 @@
     width: 30px;
     height: 30px;
     border-radius: 100%;
-border: 3px solid rgba(0,0,0,.5);
+    border: 3px solid rgba(0,0,0,.5);
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition-duration: 2s;
+    transition-duration: 1s;
+    box-shadow: 0 0 15px rgb(0 0 0 / 67%);
 }
 
 .players{
     position: absolute;
 }
 
-.players-1{
+.player-0{
     background-color: red;
 }
 
-.players-2{
+.player-1{
     background-color: greenyellow;
 }
 
-.players-3{
+.player-2{
     background-color: indianred
 }
 
-.players-4{
-    background-color: brown;
-
+.player-3{
+    background-color: rgb(89, 172, 240);
+}
+.player-4{
+    background-color: rgb(255, 76, 216);
+}
+.player-5{
+    background-color: rgb(191, 31, 255);
 }

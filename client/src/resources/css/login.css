@@ -1,0 +1,30 @@
+.login {
+    z-index: 10;
+    padding: 48vh 45%;
+    /* padding-top: 45vh; */
+    /* padding-bottom: 45vh; */
+    position: absolute;
+    /* margin: 100px; */
+    left: 0%;
+    bottom: 0%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.726);
+    transition-duration: 1s;
+}
+
+
+.hidden {
+    opacity: 0;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form>input {
+    width: 200px;
+}

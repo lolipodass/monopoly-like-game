@@ -10,24 +10,12 @@ export interface cardCompanyInfo {
     companyInfo: number,
 }
 
-
 export interface companyInfo {
     name: string,
     group: number,
     price: number,
     bail: number,
-    rent: rentPrice
-}
-
-
-export interface rentPrice {
-    start: number,
-    house1: number,
-    house2: number,
-    house3: number,
-    house4: number,
-    hotel: number
-
+    rent: [number, number, number, number, number, number]
 }
 
 export interface group {

@@ -1,0 +1,77 @@
+.PlayersInfo {
+    border: 1px solid #fff;
+    background-color: transparent;
+    width: 15vw;
+    height: 90vh;
+}
+
+.playerInfo {
+    color: #fff;
+    height: 20px;
+    margin: 5px;
+}
+
+.PlayerName {
+    font-size: 20px;
+    margin-right: 10px;
+    display: inline;
+}
+
+.playerMoney {
+    display: inline;
+    font-size: 15px;
+    color: greenyellow;
+}
+
+.playerMoney::after {
+    content: " €";
+    font-size: 18px;
+}
+
+
+.playerColor-0 {
+    color: red;
+}
+
+.playerColor-1 {
+    color: greenyellow;
+}
+
+.playerColor-2 {
+    color: indianred
+}
+
+.playerColor-3 {
+    color: rgb(89, 172, 240);
+}
+
+.playerColor-4 {
+    color: rgb(255, 76, 216);
+}
+
+.playerColor-5 {
+    color: rgb(191, 31, 255);
+}
+
+.turn {
+    box-shadow: 0 0 0 0 rgb(0, 0, 0);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}

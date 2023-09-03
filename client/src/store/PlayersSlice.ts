@@ -4,7 +4,6 @@ export interface PlayerInformation {
     name: string
     position: number,
     money: number
-    companies: [Company?],
 }
 
 export interface Company {
@@ -12,43 +11,38 @@ export interface Company {
     price: number
 }
 
-export interface ChangePosition {
-    number: number,
+export interface ChangeInformation {
+    value: number,
     player: number
 }
 
-const initialState: PlayerInformation[] = [
-    {
-        name: "me",
-        position: 0,
-        money: 1500,
-        companies: []
-    }
-]
+
+const initialState: PlayerInformation[] = []
 
 export const PlayersSlice = createSlice({
     name: 'players',
     initialState,
     reducers: {
-        addCompany: (state, action: PayloadAction<Company>) => {
-            state[0].companies.push(action.payload);
-        },
         addPlayer: (state, action: PayloadAction<PlayerInformation>) => {
             state.push(action.payload);
         },
         removePlayer: (state, action: PayloadAction<number>) => {
             state.splice(action.payload, 1);
         },
-        changePosition: (state, action: PayloadAction<ChangePosition>) => {
-            state[action.payload.player].position += action.payload.number;
-            if (state[0].position >= 40)
-                state[0].position = state[0].position - 40;
+        changePosition: (state, action: PayloadAction<ChangeInformation>) => {
+            const player = action.payload.player
+            state[player].position += action.payload.value;
+            if (state[player].position >= 40)
+                state[player].position -= 40;
+        },
+        changeMoney(state, action: PayloadAction<ChangeInformation>) {
+            state[action.payload.player].money = action.payload.value
         },
         resetPlayers: () => initialState
     }
 
 })
 
-export const { addCompany, addPlayer, resetPlayers, changePosition, removePlayer } = PlayersSlice.actions
+export const { addPlayer, resetPlayers, changePosition, changeMoney, removePlayer } = PlayersSlice.actions
 
 export default PlayersSlice.reducer 

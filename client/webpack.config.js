@@ -1,6 +1,5 @@
 /** @type {import('webpack').Configuration} */
 
-
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -20,11 +19,10 @@ const jsLoaders = (elem, elem2) => {
     return {
         loader: "babel-loader",
         options: {
-            presets,
+            presets
         }
     }
 }
-
 
 
 module.exports = {
@@ -48,11 +46,16 @@ module.exports = {
     module:
     {
         rules: [{
-            test: /\.m?js$/,
+            test: /\.m?js$/i,
             exclude: /node_modules/,
             use: jsLoaders(),
         },
-        { test: /\.css$/i, use: ["style-loader", "css-loader"] },
+        {
+            test: /\.css$/i, use: ["style-loader", {
+                loader: "css-loader",
+
+            }]
+        },
         {
             test: /\.ts$/i,
             exclude: /node_modules/,
@@ -67,31 +70,23 @@ module.exports = {
             test: /\.tsx$/i,
             exclude: /node_modules/,
             use: jsLoaders(["@babel/preset-react", { runtime: "automatic" }], "@babel/preset-typescript")
-            // {
-            //     loader: "babel-loader",
-            //     options: {
-            //         presets: [["@babel/preset-env",
-            //             {
-            //                 "useBuiltIns": "usage",
-            //                 "corejs": "3.25.2"
-            //             }],
-            //         ["@babel/preset-react", { runtime: "automatic" }],
-            //             "@babel/preset-typescript"]
-            //     },
-
-            // }
         },
+        {
+            test: /\.png$/i,
+            type: 'asset/resource'
+        }
         ],
     },
     plugins: [new HtmlWebpackPlugin(
         {
+            favicon: './src/resources/icons/favicon.svg',
             template: "./src/index.html",
         }),
     new CleanWebpackPlugin(),
     ],
     target: "web",
-    devtool: "eval-cheap-source-map",
-
+    devtool: "source-map",
+    // devtool: "eval-cheap-source-map",
     node: {
         __dirname: false,
     },

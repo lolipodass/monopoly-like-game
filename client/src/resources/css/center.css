@@ -1,7 +1,12 @@
 .center-square{
    display: flex;
    flex-direction: column;
+   background-color: transparent
    
+}
+
+li:last-child{
+    margin-bottom: 20px;
 }
 
 .messages{

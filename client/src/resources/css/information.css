@@ -1,6 +1,32 @@
-.information{
+.information {
     position: absolute;
     z-index: 10;
     width: 200px;
-    height: 200px;
+    height: 210px;
+    background-color: #fff;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.header {
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #37bc9d;
+}
+
+.info {
+    position: relative;
+}
+
+.row {
+    position: relative;
+}
+
+.stars-info {
+    top: 0px
+}
+
+.cost {
+    margin-left: 50px;
 }
