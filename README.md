@@ -1,5 +1,5 @@
 # Monopoly Game #
-This is a Multiplayer Monopoly game built using React with a custom Webpack configuration, TypeScript, Node.js, and Socket.IO.
+This is a Multiplayer Monopoly game built using React with a custom Webpack configuration, TypeScript, Redux, Node.js, and Socket.IO.
 
 
 ## Features ##
@@ -9,10 +9,11 @@ Simple and intuitive user interface
 
 ## Technologies Used ##
 - React: A JavaScript library for building user interfaces.
-- Webpack: A module bundler for modern JavaScript applications.
 - TypeScript: A superset of JavaScript that provides static typing and other features to improve code quality and maintainability.
-- Node.js: A JavaScript runtime environment that allows you to run JavaScript on the server-side.
 - Socket.IO: A library for real-time, bidirectional, and event-based communication between the client and the server.
+- Redux: A predictable state container for JavaScript apps.
+- Webpack: A module bundler for modern JavaScript applications.
+- Node.js: A JavaScript runtime environment that allows you to run JavaScript on the server-side.
 
 ## How to Play ## 
 Open your web browser and navigate to http://localhost:3000 to access the game.
